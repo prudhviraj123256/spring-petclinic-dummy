@@ -4,13 +4,13 @@ pipeline{
         timeout(time: 30, unit: 'MINUTES') 
     }
     triggers { 
-        pollSCM('* * * * *') 
+        pollSCM('30 16 * * *') 
     }
     stages{
         stage ('git') {
             steps{
                 git url: 'https://github.com/prudhviraj123256/spring-petclinic-dummy.git',
-                     branch: 'dev'
+                     branch: 'release'
             }
 
         }
